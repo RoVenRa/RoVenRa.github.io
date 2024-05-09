@@ -3,10 +3,11 @@ let game = {
     game:[]
 }
 let panel = "start"
-let nav = () => {
+
+const nav = (panel) => {
     document.onclick = (e) =>{
         e.preventDefault();
-        switch (e.path[0].id){
+        switch (e.target.id){
             case "startGame":
                 go('game','d-block');
                 break;
@@ -18,6 +19,7 @@ let nav = () => {
         }
     }
 }
+
 let go = (page, attribute) =>{
     let pages = ['start','game','end'];
     panel = page;
